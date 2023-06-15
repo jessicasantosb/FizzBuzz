@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😀</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+    
+    <style>
+        * {padding: 0; margin: 0;}
+
+        body {
+            font-family: 'Roboto Slab', serif;
+            text-align: center;
+        }
+
+        header {
+            height: 170px;
+            width: 100%;
+            background: rgb(14,41,84);
+            background: linear-gradient(90deg, rgba(14,41,84,1) 0%, rgba(31,110,140,1) 39%, rgba(46,138,153,1) 100%);
+        }
+
+        header h1 {
+            color: #fff;
+            padding-top: 20px;
+            font-size: 5rem;
+        }
+
+        div {
+            min-height: 310px;
+            padding-top: 80px;
+            margin: 0 10% 5% 10%;
+        }
+
+        input {
+            height: 60px;
+            color: #fff;
+            background: linear-gradient(90deg, rgb(28, 55, 97) 0%, rgba(31,110,140,1) 27%, rgba(46,138,153,1) 100%);
+            box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        input::placeholder {
+            color: #a4a3a3;
+            font-size: 1.25rem;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .btn {
+            background: rgb(14,41,84);
+            background: linear-gradient(90deg, rgba(14,41,84,1) 0%, rgba(31,110,140,1) 39%, rgba(46,138,153,1) 100%);
+            border-radius: 50%;
+            box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+            color: #fff;
+            cursor: pointer;
+            height: 80px;
+            width: 80px;
+            transition: box-shadow .15s,transform .15s;
+            touch-action: manipulation;
+            will-change: box-shadow,transform;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .btn:focus {
+            box-shadow: #1F6E8C 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #171f5b 0 -3px 0 inset;
+        }
+
+        .btn:hover {
+            box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #171f5b 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            box-shadow: #1F6E8C 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        footer {
+            height: 170px;
+            width: 100%;
+            background: rgb(14,41,84);
+            background: linear-gradient(90deg, rgba(14,41,84,1) 0%, rgba(31,110,140,1) 39%, rgba(46,138,153,1) 100%);
+        }
+
+        footer p {
+            color: #fff;
+            padding-top: 65px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fizz Buzz</h1>
+    </header>
+    
+    <div>        
+        <input type="number" id="num" placeholder="Type a number"></input>
+        <input class="btn" role="button" type="button" value="send" onclick="send()"></input>
+        <div id="answer"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 jessicasantosb</p>
+    </footer>
+
+<script>
+    function send() {
+        const userN = document.getElementById('num').value
+        const answer = document.getElementById('answer')
+        answer.innerHTML = " "
+        for (var i = 1; i <= userN; i++) {
+            if (i % 3 === 0  && i % 5 === 0) {
+                answer.innerHTML += " FizzBuzz, "
+            }else if (i % 5 === 0) {
+                answer.innerHTML += " Buzz, "            
+            }else if (i % 3 === 0) {
+                answer.innerHTML += " Fizz, "
+            }else {
+                answer.innerHTML += " " +i+ ", "
+            }    
+        }
+        answer.innerHTML += '\u{1F600}'
+    }
+</script>
+</body>
+</html>
